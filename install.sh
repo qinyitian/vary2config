@@ -439,7 +439,7 @@ ssl_install() {
 
 domain_check() {
     read -rp "请输入你的域名信息(eg:www.wulabing.com):" domain
-    domain_ip=${domain}
+    domain_ip=${local_ipv4}
     echo -e "${OK} ${GreenBG} 正在获取 公网ip 信息，请耐心等待 ${Font}"
     wgcfv4_status=$(curl -s4m8 https://www.cloudflare.com/cdn-cgi/trace -k | grep warp | cut -d= -f2)
     wgcfv6_status=$(curl -s6m8 https://www.cloudflare.com/cdn-cgi/trace -k | grep warp | cut -d= -f2)
